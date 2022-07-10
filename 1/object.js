@@ -20,6 +20,6 @@ useone['name']='shojai'
 console.log(useone.name);
 console.log(this);
 
-
+useone.logInfo=function(){}
 useone.age=25;
 console.log(useone);
