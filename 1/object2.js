@@ -35,6 +35,6 @@ var three = {
   },
 };
 
-var userFour=new user()
+var userFour=new User()
 
 console.log(userFour);
