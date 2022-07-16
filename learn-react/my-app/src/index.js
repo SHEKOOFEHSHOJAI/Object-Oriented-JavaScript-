@@ -24,5 +24,5 @@ root.render(
 //ReactDom =>render componnet to dom 
 
 //react har no dade ra be string convert mikonad
-//boolean object   in react can't output
+//boolean object array  in react can't output
 //
