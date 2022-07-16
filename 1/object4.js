@@ -31,6 +31,7 @@ Admin.prototype.deleteuser=function() {
     return user.email !=user.email
    }) 
 }
+
 var main=new Admin("bani",'rezai')
 var userone=new user('shekoofeh','sh');
 var users=[userone]

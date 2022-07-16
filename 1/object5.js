@@ -58,10 +58,10 @@ class User {
 
 class Admin extends User{
  delete(user){
-  users=users.filter(u=>{
-    u.email!=user.email
-      console.log("i am user", user.email);
-  })
+   users = users.filter((u) => {
+     return u.email != user.email
+     console.log("i am user", user.email);
+   });
 
  }
 
@@ -69,17 +69,18 @@ class Admin extends User{
 
 
 
-const admin2=new Admin('shyda','shojai')
-console.log(admin2);
 
-
+var usertwo = new User("shyda.78", "shyda");
 
 const userOne=new User('shekoo','bar')
-console.log(userOne);
+// console.log(userOne);
 
+const admin2=new Admin('shyda','shojai')
+// console.log(admin2);
 
- var users=[userOne,admin2,admin2]
+ var users=[userOne,usertwo,admin2]
  admin2.delete(userOne)
 
  console.log(users);
 
+//  run =>admin2.delete(users[1])
