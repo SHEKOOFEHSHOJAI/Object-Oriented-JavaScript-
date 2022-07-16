@@ -29,8 +29,8 @@ class User{
  class Admin extends User {
    delteUser(user) {
      users = users.filter(u=>{
-        // return u.email != user.email
-        console.log("i am user", user.email);
+        return u.email != user.email
+        // console.log("i am user", user.email);
      });
      
    }
@@ -49,5 +49,5 @@ userone.login().upduteScore().upduteScore().logout();
 var admin=new Admin('sheeeee','shookofe')
 
 var users=[userone,usertwo,admin]
-admin.delteUser(usertwo)
+admin.delteUser(userone)
 console.log(users);
