@@ -24,21 +24,36 @@ const  Home= () => {
        },
      ]);
     
+
+
+    const handelDelete = (id) => {
+        // if == false filter
+        // if !=true
+        const newBlog=blogs.filter((blog)=>blog.id !==id )
+        setBlogs(newBlog)
+      console.log(blogs);
+    };
+
+
     
-    return (  
+    return (
+      <div className="home">
+        {/* <h1>Home page</h1> */}
+        {/* <p>{name}</p> */}
 
-        <div className="home">
-            {/* <h1>Home page</h1> */}
-            {/* <p>{name}</p> */}
-        
-            <BlogList blogs={blogs}/>
-           {/* for  pass arg*/}
-            {/* <button onClick={()=> handelClickAgain('mario')  }>click</button> */}
-              
+        <BlogList
+          blogs={blogs}
+          title="All Blogs!"
+          handelDelete={handelDelete}
+        />
 
-          
-
-        </div>
+        {/* <BlogList
+          blogs={blogs.filter((blog) => blog.author === "mario")}
+          title="Mario Blogs!"
+        /> */}
+        {/* for  pass arg*/}
+        {/* <button onClick={()=> handelClickAgain('mario')  }>click</button> */}
+      </div>
     );
 }
  
