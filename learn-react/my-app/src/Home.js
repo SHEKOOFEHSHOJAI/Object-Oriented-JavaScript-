@@ -24,7 +24,7 @@ const  Home= () => {
        },
      ]);
     
-
+      const [name,setName]=useState('mario')
 
     const handelDelete = (id) => {
         // if == false filter  =>remove 
@@ -37,7 +37,10 @@ const  Home= () => {
 //render for each change data or refresh broweser 
     useEffect(()=>{
         console.log('USEEFECT RUN');
-    })
+      // dependency arry  => the seconed argument just run one and run just with render no chenge data
+       console.log(name);   
+    },[name])
+
     return (
       <div className="home">
         {/* <h1>Home page</h1> */}
@@ -48,7 +51,8 @@ const  Home= () => {
           title="All Blogs!"
           handelDelete={handelDelete}
         />
-
+        <button onClick={()=>setName('luji')}>change name</button>
+        <p>{name}</p>
         {/* <BlogList
           blogs={blogs.filter((blog) => blog.author === "mario")}
           title="Mario Blogs!"
