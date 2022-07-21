@@ -5,6 +5,7 @@ const  Home= () => {
     // let name='mario';
      const [blogs, setBlogs] = useState(null);
      const [isPending,setPending]=useState(true)
+     const[error,setError]=useState(null)
     
       // const [name,setName]=useState('mario')
 
@@ -23,6 +24,10 @@ const  Home= () => {
 
          fetch(" http://localhost:8000/blogs")
            .then((res) => {
+            //show in catch and can't get data in API
+            if(!res.ok){
+              throw Error('clould not fetch the data for that resource')
+            }
              return res.json();
            })
            .then((data) => {
@@ -30,9 +35,14 @@ const  Home= () => {
              setBlogs(data);
              //when data has load not show
              setPending(false);
+             // if get data don't show error
+             setError(null)
            })
            .catch((err)=>{
-                console.log(err.message);
+                // console.log(err.message);
+                //show error in browser
+                setPending(false)
+                setError(err.message)
                  
            })
 
@@ -50,6 +60,11 @@ const  Home= () => {
       <div className="home">
         {/* <h1>Home page</h1> */}
         {/* <p>{name}</p> */}
+
+        {/* show error in browser */}
+
+        {error && <div>{error}</div>}
+        
         {isPending && <div>loading....</div>}
         { blogs &&<BlogList
           blogs={blogs}
