@@ -3,56 +3,61 @@ import BlogList from "./BlogList";
 
 const  Home= () => {
     // let name='mario';
-     const [blogs, setBlogs] = useState([
-       {
-         title: "My new website",
-         body: "lorem ipsum...",
-         author: "mario",
-         id: 1,
-       },
-       {
-         title: "Welcome party!",
-         body: "lorem ipsum...",
-         author: "yoshi",
-         id: 2,
-       },
-       {
-         title: "Web dev top tips",
-         body: "lorem ipsum...",
-         author: "mario",
-         id: 3,
-       },
-     ]);
+     const [blogs, setBlogs] = useState(null);
+     const [isPending,setPending]=useState(true)
     
-      const [name,setName]=useState('mario')
+      // const [name,setName]=useState('mario')
 
-    const handelDelete = (id) => {
-        // if == false filter  =>remove 
-        // if !=true=> we want keep in arry
-        const newBlog=blogs.filter((blog)=>blog.id !==id )
-        setBlogs(newBlog)
-      console.log(blogs);
-    };
+    // const handelDelete = (id) => {
+    //     // if == false filter  =>remove 
+    //     // if !=true=> we want keep in arry
+    //     const newBlog=blogs.filter((blog)=>blog.id !==id )
+    //     setBlogs(newBlog)
+    //   console.log(blogs);
+    // };
 
 //render for each change data or refresh broweser 
     useEffect(()=>{
-        console.log('USEEFECT RUN');
-      // dependency arry  => the seconed argument just run one and run just with render no chenge data
-       console.log(name);   
-    },[name])
+      setTimeout(() => {
+
+
+         fetch(" http://localhost:8000/blogs")
+           .then((res) => {
+             return res.json();
+           })
+           .then((data) => {
+             console.log(data);
+             setBlogs(data);
+             //when data has load not show
+             setPending(false);
+           })
+           .catch((err)=>{
+                console.log(err.message);
+                 
+           })
+
+
+
+        
+      },1000);
+      //[] dependency arry  => the seconed argument just run one and run just with render no chenge data
+      //no dependency arry run for each change in page
+      //[name ]=>run for change useState
+      //  console.log(name);   
+    },[])
 
     return (
       <div className="home">
         {/* <h1>Home page</h1> */}
         {/* <p>{name}</p> */}
-
-        <BlogList
+        {isPending && <div>loading....</div>}
+        { blogs &&<BlogList
           blogs={blogs}
           title="All Blogs!"
-          handelDelete={handelDelete}
-        />
-        <button onClick={()=>setName('luji')}>change name</button>
-        <p>{name}</p>
+          // handelDelete={handelDelete}
+        />  }
+        {/* <button onClick={()=>setName('luji')}>change name</button> */}
+        {/* <p>{name}</p> */}
         {/* <BlogList
           blogs={blogs.filter((blog) => blog.author === "mario")}
           title="Mario Blogs!"

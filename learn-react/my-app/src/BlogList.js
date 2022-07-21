@@ -1,4 +1,6 @@
-const BlogList = ({blogs,title,handelDelete}) => {
+const BlogList = ({blogs,title
+  // , handelDelete
+ }) => {
 
     //CAN DISTRACCHER
     // const blogs=props.blogs
@@ -12,7 +14,7 @@ const BlogList = ({blogs,title,handelDelete}) => {
           <div className="blog-preview" key={blog.id}>
             <h2>{blog.title}</h2>
             <p>written byt {blog.author}</p>
-            <button onClick={()=>handelDelete(blog.id)}>delete blog</button>
+            {/* <button onClick={()=>handelDelete(blog.id)}>delete blog</button> */}
           </div>
         ))}
       </div>
