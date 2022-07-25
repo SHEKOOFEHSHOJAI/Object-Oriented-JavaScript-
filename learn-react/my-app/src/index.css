@@ -55,3 +55,22 @@
 .blog-preview a{
   text-decoration: none;
 }
+/* blog details */
+
+.blog-detail div{
+  margin: 20px 0;
+}
+
+.blog-detail h2{
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+
+.blog-detail button{
+  background-color: #f1356d;
+  color: #f2f2f2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
