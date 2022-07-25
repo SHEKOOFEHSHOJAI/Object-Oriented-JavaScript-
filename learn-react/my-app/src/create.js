@@ -4,6 +4,7 @@ const Create = () => {
     const [title,setTitle]=useState('')
     const [body, setBody] = useState("");
     const [auter, setAuter] = useState("");
+    // SUBMITN AND SEND OBJECT
     const handeleSubmit=(e)=>{
         //don't refresh website
      e.preventDefault()
