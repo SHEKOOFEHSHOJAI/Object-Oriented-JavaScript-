@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Home from './Home';
 import  Create from "./create";
 import{BrowserRouter as Router,Route,Switch}from 'react-router-dom'
+import BlogDetails from "./BlogDetail";
 //browserRouter in Router
 //nested in app.js
 //each access the router
@@ -19,12 +20,16 @@ function App() {
         <Navbar />
         <div className="content">
           <Switch>
-            <Route exact   path="/">
+            <Route exact path="/">
               <Home />
             </Route>
 
             <Route path="/create">
-              < Create/>
+              <Create />
+            </Route>
+
+            <Route path="/blogs/:id">
+              <BlogDetails />
             </Route>
           </Switch>
           {/* <h1>{title}</h1> */}
