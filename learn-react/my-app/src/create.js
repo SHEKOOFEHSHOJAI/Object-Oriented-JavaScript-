@@ -31,7 +31,7 @@ const Create = () => {
           //go to forward page
           history.go(1);
           //go to this route
-          history.push('')
+          history.push('/')
     })
     }
     return (

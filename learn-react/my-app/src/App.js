@@ -6,6 +6,7 @@ import Home from './Home';
 import  Create from "./create";
 import{BrowserRouter as Router,Route,Switch}from 'react-router-dom'
 import BlogDetails from "./BlogDetail";
+import NotFound from "./NotFound";
 //browserRouter in Router
 //nested in app.js
 //each access the router
@@ -31,6 +32,11 @@ function App() {
             <Route path="/blogs/:id">
               <BlogDetails />
             </Route>
+            {/* each route other error 404 */}
+            <Route path="*">
+              <NotFound/>
+            </Route>
+
           </Switch>
           {/* <h1>{title}</h1> */}
           {/* <p>liked {likes} times</p> */}
