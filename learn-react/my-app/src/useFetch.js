@@ -7,8 +7,9 @@ const useFetch=(url)=>{
  const [data, setData] = useState(null);
  const [isPending, setPending] = useState(true);
  const [error, setError] = useState(null);
-
+// with render page run 
     useEffect(() => {
+      // create obj
       const abortCount=new AbortController()
       setTimeout(() => {
         // Communicating with a

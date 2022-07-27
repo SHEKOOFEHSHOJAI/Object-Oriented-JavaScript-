@@ -21,6 +21,7 @@ function App() {
         <Navbar />
         <div className="content">
           <Switch>
+            {/* exact for =>don't go other route  home componnnet just this go */}
             <Route exact path="/">
               <Home />
             </Route>
@@ -54,7 +55,7 @@ function App() {
 }
 
 
-//react doesn't request to the server for find link beacuse react has root componnent app.js 
+//react doesn't request to the server for find link beacuse react has root componnent app.js  and app.js pass routes in react
 //and pass links 
 //switch for one route
 export default App;

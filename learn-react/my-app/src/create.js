@@ -24,6 +24,7 @@ const Create = () => {
       //convert object to json
       body:JSON.stringify(blog)
      }).then(()=>{
+      
       console.log("New Blog Add")
       setIspending(false)
       // go to back page

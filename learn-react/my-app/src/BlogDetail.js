@@ -3,8 +3,11 @@ import useFetch from "./useFetch";
 
 //Route Parameters
 const  BlogDetails= () => {
+  // in serch browser=route
     const {id}=useParams()
+    // go to back or forward
     const history=useHistory()
+    // castum hook
     const {
       data: blog,
       error,
