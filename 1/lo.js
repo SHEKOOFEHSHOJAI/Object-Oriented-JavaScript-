@@ -53,7 +53,7 @@
 // let name='shayn';
 // console.log(name>'Shayn');
 // //s next form c
-console.log(name > "crystal");
+// console.log(name > "crystal");
 
 
 
@@ -212,8 +212,28 @@ console.log(name > "crystal");
 
 
 
-let tofix = 111.11;
+// let tofix = 111.11;
+// rond number if biger than le+21
+// one nuber after digit return
+// console.log(tofix.toFixed(0));
+//  one number before digit  and one number before digit part digit is rond 
+// console.log(tofix.toExponential(1));
 
-console.log(tofix.toFixed(1));
-console.log(tofix.toExponential(1));
-console.log(tofix.toPrecision(1));
+
+// If num is large enough To include all the integer part of the NumberObject, then the returned string will use point counting method. otherwise using the exponential counting method.
+// console.log(tofix.toPrecision(1));
+// convert to intiger
+//  parseInt()  2
+//  p
+
+function howManySmaller(arr, n) {
+  return arr.filter((x) => x.toFixed(2) < n).length;
+
+}
+
+howManySmaller([1.234,1.235,1.228],1.24) 
+howManySmaller([1.1888,1.1868,1.1838],1.19)
+howManySmaller([3.1288,3.1212,3.1205],3.1212) 
+var t = 3.1288;
+var m=t.toFixed(2)
+console.log(m);
