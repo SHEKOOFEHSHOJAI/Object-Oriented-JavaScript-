@@ -226,14 +226,90 @@
 //  parseInt()  2
 //  p
 
-function howManySmaller(arr, n) {
-  return arr.filter((x) => x.toFixed(2) < n).length;
+// function howManySmaller(arr, n) {
+//   return arr.filter((x) => x.toFixed(2) < n).length;
 
-}
+// }
 
-howManySmaller([1.234,1.235,1.228],1.24) 
-howManySmaller([1.1888,1.1868,1.1838],1.19)
-howManySmaller([3.1288,3.1212,3.1205],3.1212) 
-var t = 3.1288;
-var m=t.toFixed(2)
-console.log(m);
+// howManySmaller([1.234,1.235,1.228],1.24) 
+// howManySmaller([1.1888,1.1868,1.1838],1.19)
+// howManySmaller([3.1288,3.1212,3.1205],3.1212) 
+// var t = 3.1288;
+// var m=t.toFixed(2)
+// console.log(m);
+
+
+
+var str="Hello World!";
+// console.log(str.slice(5))
+// console.log(str.substring(6))
+// console.log(str.substr(2,4))
+//output:
+// World!
+// World!
+// World!
+
+
+// var str="Hello beautifulo World!";
+// console.log(str.slice(6,-1))
+// console.log(str.substring(6,16))
+// console.log(str.substr(6,9))
+
+
+// function cutIt(arr) {
+//   //coding here...
+//   arr.map()
+//          var min = Math.min(arr[i]).length;
+//     arr.slice(0, min);
+   
+//   console.log(arr);
+//   return arr;
+// }
+// function cutIt(arr) {
+//   let min = Math.min(arr);
+// //   return arr.map((str) => str.slice(0, min));
+// return min
+// }
+
+// cutIt(["ab", "cde", "fgh"]), ["ab", "cd", "fg"];
+
+// console.log(cutIt())
+
+// const arr = ["ab", "cde", "fgh"];
+// arr.map((...nam)=>{
+// var b= nam.length
+// let min=Math.min(b)
+// console.log(min);
+// })
+
+
+// var str="Hello World!";
+// console.log(str.indexOf("o"))
+// console.log(str.lastIndexOf("o"))
+// console.log(str.search("o"))
+//output:
+// 4
+// 7
+// 4
+
+
+var str="Helloo World mmm!";
+console.log(str.indexOf("World"))
+console.log(str.lastIndexOf("o",5))
+console.log(str.search(/world/i))
+// console.log(str.search(/word/i))
+
+// 6
+// lo.js:298 -1
+// lo.js:299 6
+// lo.js:300 -1
+
+
+
+
+// var str = "My name is John";
+// var words = str.split(" ");
+// console.log(words);
+//output:
+// ["My", "name", "is", "John"];
+  
