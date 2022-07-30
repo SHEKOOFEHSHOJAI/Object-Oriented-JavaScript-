@@ -313,3 +313,13 @@ console.log(str.search(/world/i))
 //output:
 // ["My", "name", "is", "John"];
   
+
+
+
+
+
+// var str = "My".concat("name", "is", "John");
+// console.log(str);
+
+// //output:
+// MynameisJohn;
