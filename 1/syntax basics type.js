@@ -288,7 +288,7 @@ const person = [
 
   {
     name: "nastaran",
-    age: 20,
+    age: 12,
   },
 ];
 
@@ -336,7 +336,21 @@ console.log(even);
 // output [2,4,6]
 
 
+let v=[2, 4, 6].filter((ele)=>ele>=4)
+console.log(v);
 
-const defult=
+const defult = people.filter((person) => person.age >= 18);
+console.log(defult);
 
 
+     //   0 1 2 1 0 2 2 7 8
+let num5=[1,2,3,2,1,3,3,5,4]
+
+const nums=num5.filter((value,index,arr)=>{
+//  console.log(  arr.indexOf(value));
+ return arr.indexOf(value)===index
+})
+
+
+console.log(nums);
+// output   [1, 2, 3, 5, 4]
