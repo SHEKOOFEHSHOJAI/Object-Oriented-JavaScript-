@@ -354,3 +354,23 @@ const nums=num5.filter((value,index,arr)=>{
 
 console.log(nums);
 // output   [1, 2, 3, 5, 4]
+
+
+
+
+// reduce
+
+// reduce(callbackfun,intioal)
+
+
+
+const num6=[1,2,3,4,5,6,7]
+const total= num6.reduce(sum)
+
+function sum(accumulator,value) {
+    return accumulator+value
+    
+}
+
+console.log(total);
+// 0 1 3 6 10 15 21 28
