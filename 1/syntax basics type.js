@@ -149,13 +149,16 @@ if (true) {
 // }
 // speak2(`argument`)
 
-const clasckArea = function (radious) {
-  let area = 3.14 * radious ** 2;
-  return area;
-};
+// const clasckArea = function (radious) {
+//   let area = 3.14 * radious ** 2;
+//   return area;
+// };
 
-const area = clasckArea(5);
-console.log(area);
+
+
+
+// const area = clasckArea(5);
+// console.log(area);
 
 // arrow function
 
@@ -360,12 +363,12 @@ console.log(nums);
 
 // reduce
 
-// reduce(callbackfun,intioal)
+// reduce(callbackfun,intioalvalue)
 
 
 
 const num6=[1,2,3,4,5,6,7]
-const total= num6.reduce(sum)
+const total= num6.reduce(sum,0)
 
 function sum(accumulator,value) {
     return accumulator+value
@@ -374,3 +377,192 @@ function sum(accumulator,value) {
 
 console.log(total);
 // 0 1 3 6 10 15 21 28
+
+
+
+
+
+const array4 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+
+
+
+
+
+const array = [15, 16, 17, 18, 19];
+
+function reducer(previous, current, index) {
+  const returns = previous + current;
+  console.log(
+    `previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`
+  );
+  return returns;
+}
+
+array.reduce(reducer);
+
+// output
+
+// previous: 15, current: 16, index: 1, returns: 31
+//  previous: 31, current: 17, index: 2, returns: 48
+// previous: 48, current: 18, index: 3, returns: 66
+// previous: 66, current: 19, index: 4, returns: 85
+
+
+
+// reducer
+
+let redu = [15, 16, 17, 18, 19].reduce(
+  (previousValue, currentValue) => {
+    // is sum previousValue
+    // currentValue=>each element array
+    return previousValue + currentValue;
+
+    //    10 is initioalValue
+  },10
+);
+console.log(redu);
+
+
+
+
+
+// async await
+
+// async => Other codes are executed at the same time
+
+
+
+
+//==============================Asynchronous JavaScript
+
+
+// synchronous =>run code line to line  from top to botton
+
+// Asynchronous  pass request to browser and callback get data ---code don't await to get data go to run other code 
+
+
+
+// http requst
+const request=new XMLHttpRequest();
+
+
+request.addEventListener('redystatechange',()=>{
+  if(request.readyState===4){
+    console.log(request,request.responseText);
+  }
+})
+request.open("GET","https://jsonplaceholder.typicode.com/todos/");
+request.send()
+console.log(request);
+
+// status
+
+// 100  200 true
+// 300 change router
+// 400 error
+// 500 error server
+
+// fetch("https://jsonplaceholder.typicode.com/todos/1")
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+
+
+
+// console.log(1);
+// console.log(2);
+
+// setTimeout(() => {
+  
+//   console.log(3);
+// }, 5000);
+// console.log(4);
+// console.log(5);
+
+
+// output 1 2  4  5   3
+
+
+// callback =for code  run in line to line
+
+
+function firstLOg() {
+  
+console.log(1);
+console.log(2);
+
+}
+
+
+function middleLog(callback) {
+  setTimeout(() => {
+    console.log(3);
+    callback()
+  }, 5000);
+}
+
+
+function lastLog() {
+    console.log(4);
+    console.log(5);
+  
+}
+
+firstLOg()
+middleLog(lastLog)
+
+// output 1,2 ,3 ,4 ,5
+
+
+// for Escape callbsckfanc=promise 
+// promise
+let mypromise=new Promise((res,reject)=>{
+
+})
+
+
+
+// chaining promise
+
+let wordPromis=new Promise((resolve,reject)=>{
+  let text="shekoofeh";
+  if(text){
+    resolve(text)
+
+  }else{
+    reject(new Error('text is empity'))
+
+  }
+})
+
+// console.log(wordPromis);
+// /promise chaining handler
+wordPromis.then((resole)=>{
+  return resole.split("")
+ 
+}).then((res2)=>{
+
+        console.log(res2);
+      return res2.reverse()
+}).then((response)=>{
+
+  console.log(response);
+  return response
+})
+
+
+// fetch api
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+.then((res)=>{
+  console.log(res);
+// return  res.json()
+})
+
+.then((re)=>{
+console.log(res);
+})
+
+.catch((err)=>{
+  console.log(err);
+})
