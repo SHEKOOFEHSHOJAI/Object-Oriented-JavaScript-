@@ -556,13 +556,21 @@ wordPromis.then((resole)=>{
 fetch("https://jsonplaceholder.typicode.com/todos/1")
 .then((res)=>{
   console.log(res);
-// return  res.json()
+return  JSON.parse(res)
 })
 
 .then((re)=>{
-console.log(res);
+console.log(re);
 })
 
 .catch((err)=>{
   console.log(err);
 })
+
+
+// JSON.parse=>convert json string  into an object
+
+// json.stringify=> creates a json string
+
+
+
